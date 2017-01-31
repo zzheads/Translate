@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6CFB1941E40BB43005E5BA1 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFB1931E40BB43005E5BA1 /* APIError.swift */; };
 		A6F3B56F1E408B0700C0125C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F3B56E1E408B0700C0125C /* AppDelegate.swift */; };
 		A6F3B5711E408B0700C0125C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F3B5701E408B0700C0125C /* ViewController.swift */; };
 		A6F3B5741E408B0700C0125C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6F3B5721E408B0700C0125C /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A6CFB1931E40BB43005E5BA1 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		A6F3B56B1E408B0700C0125C /* Translate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F3B56E1E408B0700C0125C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6F3B5701E408B0700C0125C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				A6F3B5841E408B8F00C0125C /* APIClient.swift */,
 				A6F3B5821E408B5C00C0125C /* JSON.swift */,
 				A6F3B5861E408BE200C0125C /* HTTPStatusCode.swift */,
+				A6CFB1931E40BB43005E5BA1 /* APIError.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			files = (
 				A6F3B5871E408BE200C0125C /* HTTPStatusCode.swift in Sources */,
 				A6F3B5831E408B5C00C0125C /* JSON.swift in Sources */,
+				A6CFB1941E40BB43005E5BA1 /* APIError.swift in Sources */,
 				A6F3B5711E408B0700C0125C /* ViewController.swift in Sources */,
 				A6F3B56F1E408B0700C0125C /* AppDelegate.swift in Sources */,
 				A6F3B5851E408B8F00C0125C /* APIClient.swift in Sources */,
@@ -330,6 +334,7 @@
 				A6F3B57F1E408B0700C0125C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

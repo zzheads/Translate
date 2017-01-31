@@ -88,6 +88,16 @@ enum HTTPStatusCode: Int {
     case notExtended = 510
     case networkAuthenticationRequired = 511
     
+    case unknown = 999
+
+    static func getCode(_ value: Int) -> HTTPStatusCode {
+        if let code = HTTPStatusCode(rawValue: value) {
+            return code
+        } else {
+            return HTTPStatusCode.unknown
+        }
+    }
+        
     var message: String {
         switch self {
         case ._continue: return "Continue"
@@ -159,6 +169,8 @@ enum HTTPStatusCode: Int {
         case .bandwidthLimitExceeded: return "Bandwidth limit exceeded"
         case .notExtended: return "Not extended"
         case .networkAuthenticationRequired: return "Network authentication required"
+            
+        case .unknown: return "Unknown HTTP code"
         }
     }
     
@@ -298,6 +310,8 @@ enum HTTPStatusCode: Int {
             return "Further extensions to the request are required for the server to fulfill it."
         case .networkAuthenticationRequired:
             return "The client needs to authenticate to gain network access. Intended for use by intercepting proxies used to control access to the network (e.g., \"captive portals\" used to require agreement to Terms of Service before granting full Internet access via a Wi-Fi hotspot)."
+        case .unknown:
+            return "Unknown HTTP code."
         }
     }
 }

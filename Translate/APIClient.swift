@@ -32,20 +32,12 @@ protocol APIClient {
     func fetch<T: JSONDecodable>(request: URLRequest, parse: @escaping (JSON) -> T?, completion: @escaping (APIResult<T>) -> Void)
 }
 
-let errorNameInJSON = "error"
-
-public let ZZHNetworkingErrorDomain = "com.zzheads.App.NetworkingError"
-public let MissingHTTPResponseError: Int = 10
-public let UnexpectedResponseError: Int = 20
-
 extension APIClient {
     
     func taskCompletion(with completion: @escaping JSONTaskCompletion) -> URLSessionDataTaskCompletion {
         return { (data: Data?, response: URLResponse?, error: Error?) in
             guard let response = response as? HTTPURLResponse else {
-                let userInfo = [NSLocalizedDescriptionKey: NSLocalizedString("Missing HTTP Response", comment: "")]
-                let error = NSError(domain: ZZHNetworkingErrorDomain, code: MissingHTTPResponseError, userInfo: userInfo)
-                completion(nil, nil, error)
+                completion(nil, nil, APIError.missingHTTPResponseError.error)
                 return
             }
             
@@ -54,8 +46,9 @@ extension APIClient {
                 return
             }
             
-            switch response.statusCode {
-            case 200:
+            let statusCode = HTTPStatusCode.getCode(response.statusCode)
+            switch statusCode {
+            case .ok:
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON
                     completion(json, response, nil)
@@ -66,16 +59,8 @@ extension APIClient {
                 }
                 
             default:
-                guard let httpError = HTTPStatusCode(rawValue: response.statusCode) else {
-                    let userInfo = [NSLocalizedDescriptionKey: NSLocalizedString("Unknown HTTP code", comment: "")]
-                    let error = NSError(domain: ZZHNetworkingErrorDomain, code: response.statusCode, userInfo: userInfo)
-                    completion(nil, response, error)
-                    return
-                }
-                
-                let userInfo = [NSLocalizedDescriptionKey: NSLocalizedString(httpError.message, comment: "")]
-                let error = NSError(domain: ZZHNetworkingErrorDomain, code: httpError.rawValue, userInfo: userInfo)
-                completion(nil, response, error)
+                let errorCode = HTTPStatusCode.getCode(response.statusCode)
+                completion(nil, response, APIError.httpResponseStatusCodeError(errorCode).error)
                 return
             }
         }
