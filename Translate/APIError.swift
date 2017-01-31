@@ -14,11 +14,13 @@ enum APIError: Error {
     case missingHTTPResponseError
     case unexpectedResponseError
     case httpResponseStatusCodeError(HTTPStatusCode)
+    case serializationError
     
     var code: Int {
         switch self {
         case .missingHTTPResponseError: return 10
         case .unexpectedResponseError: return 20
+        case .serializationError: return 30
         case .httpResponseStatusCodeError(let statusCode): return statusCode.rawValue
         }
     }
@@ -27,6 +29,7 @@ enum APIError: Error {
         switch self {
         case .missingHTTPResponseError: return "Missing HTTP Response"
         case .unexpectedResponseError: return "Unexpected HTTP Response Error"
+        case .serializationError: return "Bad data format, serialization error"
         case .httpResponseStatusCodeError(let statusCode): return "HTTP Response Error: \(statusCode.message)"
         }
     }

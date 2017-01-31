@@ -20,11 +20,18 @@ protocol JSONDecodable: class {
 }
 
 typealias Parse<T> = ((JSON) -> T?) where T: JSONDecodable
+typealias ParseArray<T> = ((JSONArray) -> [T]?) where T: JSONDecodable
 
 extension JSONDecodable {
     static var parse: Parse<Self> {
         return { (json: JSON) in
             return Self.init(with: json)
+        }
+    }
+
+    static var parseArray: ParseArray<Self> {
+        return { (jsonArray: JSONArray) in
+            return [Self].init(with: jsonArray)
         }
     }
 }
