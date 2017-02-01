@@ -13,6 +13,17 @@
 		A6CFB19A1E40CFA1005E5BA1 /* TranslationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFB1991E40CFA1005E5BA1 /* TranslationResponse.swift */; };
 		A6CFB19C1E40DCA7005E5BA1 /* TranslationLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFB19B1E40DCA7005E5BA1 /* TranslationLanguage.swift */; };
 		A6CFB19E1E40DD47005E5BA1 /* LanguagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFB19D1E40DD47005E5BA1 /* LanguagesResponse.swift */; };
+		A6CFB1AB1E41B89C005E5BA1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFB1AA1E41B89C005E5BA1 /* AppConstants.swift */; };
+		A6CFB1B91E41BBBC005E5BA1 /* SanFranciscoDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6CFB1B01E41BBBC005E5BA1 /* SanFranciscoDisplay-Black.otf */; };
+		A6CFB1BA1E41BBBC005E5BA1 /* SanFranciscoDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6CFB1B11E41BBBC005E5BA1 /* SanFranciscoDisplay-Bold.otf */; };
+		A6CFB1BB1E41BBBC005E5BA1 /* SanFranciscoDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6CFB1B21E41BBBC005E5BA1 /* SanFranciscoDisplay-Heavy.otf */; };
+		A6CFB1BC1E41BBBC005E5BA1 /* SanFranciscoDisplay-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6CFB1B31E41BBBC005E5BA1 /* SanFranciscoDisplay-Light.otf */; };
+		A6CFB1BD1E41BBBC005E5BA1 /* SanFranciscoDisplay-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6CFB1B41E41BBBC005E5BA1 /* SanFranciscoDisplay-Medium.otf */; };
+		A6CFB1BE1E41BBBC005E5BA1 /* SanFranciscoDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6CFB1B51E41BBBC005E5BA1 /* SanFranciscoDisplay-Regular.otf */; };
+		A6CFB1BF1E41BBBC005E5BA1 /* SanFranciscoDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6CFB1B61E41BBBC005E5BA1 /* SanFranciscoDisplay-Semibold.otf */; };
+		A6CFB1C01E41BBBC005E5BA1 /* SanFranciscoDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6CFB1B71E41BBBC005E5BA1 /* SanFranciscoDisplay-Thin.otf */; };
+		A6CFB1C11E41BBBC005E5BA1 /* SanFranciscoDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6CFB1B81E41BBBC005E5BA1 /* SanFranciscoDisplay-Ultralight.otf */; };
+		A6CFB1C31E41F186005E5BA1 /* AlamoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFB1C21E41F186005E5BA1 /* AlamoAPIClient.swift */; };
 		A6F3B56F1E408B0700C0125C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F3B56E1E408B0700C0125C /* AppDelegate.swift */; };
 		A6F3B5711E408B0700C0125C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F3B5701E408B0700C0125C /* ViewController.swift */; };
 		A6F3B5741E408B0700C0125C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6F3B5721E408B0700C0125C /* Main.storyboard */; };
@@ -32,6 +43,17 @@
 		A6CFB1991E40CFA1005E5BA1 /* TranslationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationResponse.swift; sourceTree = "<group>"; };
 		A6CFB19B1E40DCA7005E5BA1 /* TranslationLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationLanguage.swift; sourceTree = "<group>"; };
 		A6CFB19D1E40DD47005E5BA1 /* LanguagesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguagesResponse.swift; sourceTree = "<group>"; };
+		A6CFB1AA1E41B89C005E5BA1 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		A6CFB1B01E41BBBC005E5BA1 /* SanFranciscoDisplay-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Black.otf"; path = "Resources/SanFranciscoDisplay-Black.otf"; sourceTree = "<group>"; };
+		A6CFB1B11E41BBBC005E5BA1 /* SanFranciscoDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Bold.otf"; path = "Resources/SanFranciscoDisplay-Bold.otf"; sourceTree = "<group>"; };
+		A6CFB1B21E41BBBC005E5BA1 /* SanFranciscoDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Heavy.otf"; path = "Resources/SanFranciscoDisplay-Heavy.otf"; sourceTree = "<group>"; };
+		A6CFB1B31E41BBBC005E5BA1 /* SanFranciscoDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Light.otf"; path = "Resources/SanFranciscoDisplay-Light.otf"; sourceTree = "<group>"; };
+		A6CFB1B41E41BBBC005E5BA1 /* SanFranciscoDisplay-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Medium.otf"; path = "Resources/SanFranciscoDisplay-Medium.otf"; sourceTree = "<group>"; };
+		A6CFB1B51E41BBBC005E5BA1 /* SanFranciscoDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Regular.otf"; path = "Resources/SanFranciscoDisplay-Regular.otf"; sourceTree = "<group>"; };
+		A6CFB1B61E41BBBC005E5BA1 /* SanFranciscoDisplay-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Semibold.otf"; path = "Resources/SanFranciscoDisplay-Semibold.otf"; sourceTree = "<group>"; };
+		A6CFB1B71E41BBBC005E5BA1 /* SanFranciscoDisplay-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Thin.otf"; path = "Resources/SanFranciscoDisplay-Thin.otf"; sourceTree = "<group>"; };
+		A6CFB1B81E41BBBC005E5BA1 /* SanFranciscoDisplay-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Ultralight.otf"; path = "Resources/SanFranciscoDisplay-Ultralight.otf"; sourceTree = "<group>"; };
+		A6CFB1C21E41F186005E5BA1 /* AlamoAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamoAPIClient.swift; sourceTree = "<group>"; };
 		A6F3B56B1E408B0700C0125C /* Translate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F3B56E1E408B0700C0125C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6F3B5701E408B0700C0125C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +86,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A6CFB1AF1E41BBA2005E5BA1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A6CFB1B01E41BBBC005E5BA1 /* SanFranciscoDisplay-Black.otf */,
+				A6CFB1B11E41BBBC005E5BA1 /* SanFranciscoDisplay-Bold.otf */,
+				A6CFB1B21E41BBBC005E5BA1 /* SanFranciscoDisplay-Heavy.otf */,
+				A6CFB1B31E41BBBC005E5BA1 /* SanFranciscoDisplay-Light.otf */,
+				A6CFB1B41E41BBBC005E5BA1 /* SanFranciscoDisplay-Medium.otf */,
+				A6CFB1B51E41BBBC005E5BA1 /* SanFranciscoDisplay-Regular.otf */,
+				A6CFB1B61E41BBBC005E5BA1 /* SanFranciscoDisplay-Semibold.otf */,
+				A6CFB1B71E41BBBC005E5BA1 /* SanFranciscoDisplay-Thin.otf */,
+				A6CFB1B81E41BBBC005E5BA1 /* SanFranciscoDisplay-Ultralight.otf */,
+			);
+			name = Resources;
+			path = Translate;
+			sourceTree = "<group>";
+		};
 		A6F3B5621E408B0700C0125C = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +114,7 @@
 				A6F3B57A1E408B0700C0125C /* Info.plist */,
 				D8E2E3FA51EFA2967836F1C9 /* Pods */,
 				91C76C6E5E89EA6720BB5F99 /* Frameworks */,
+				A6CFB1AF1E41BBA2005E5BA1 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +155,8 @@
 				A6CFB1991E40CFA1005E5BA1 /* TranslationResponse.swift */,
 				A6CFB19B1E40DCA7005E5BA1 /* TranslationLanguage.swift */,
 				A6CFB19D1E40DD47005E5BA1 /* LanguagesResponse.swift */,
+				A6CFB1AA1E41B89C005E5BA1 /* AppConstants.swift */,
+				A6CFB1C21E41F186005E5BA1 /* AlamoAPIClient.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -191,9 +233,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6CFB1BF1E41BBBC005E5BA1 /* SanFranciscoDisplay-Semibold.otf in Resources */,
 				A6F3B5791E408B0700C0125C /* LaunchScreen.storyboard in Resources */,
 				A6F3B5761E408B0700C0125C /* Assets.xcassets in Resources */,
+				A6CFB1B91E41BBBC005E5BA1 /* SanFranciscoDisplay-Black.otf in Resources */,
+				A6CFB1BD1E41BBBC005E5BA1 /* SanFranciscoDisplay-Medium.otf in Resources */,
+				A6CFB1C01E41BBBC005E5BA1 /* SanFranciscoDisplay-Thin.otf in Resources */,
 				A6F3B5741E408B0700C0125C /* Main.storyboard in Resources */,
+				A6CFB1BB1E41BBBC005E5BA1 /* SanFranciscoDisplay-Heavy.otf in Resources */,
+				A6CFB1BE1E41BBBC005E5BA1 /* SanFranciscoDisplay-Regular.otf in Resources */,
+				A6CFB1BA1E41BBBC005E5BA1 /* SanFranciscoDisplay-Bold.otf in Resources */,
+				A6CFB1C11E41BBBC005E5BA1 /* SanFranciscoDisplay-Ultralight.otf in Resources */,
+				A6CFB1BC1E41BBBC005E5BA1 /* SanFranciscoDisplay-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,12 +306,14 @@
 				A6F3B5871E408BE200C0125C /* HTTPStatusCode.swift in Sources */,
 				A6F3B5831E408B5C00C0125C /* JSON.swift in Sources */,
 				A6CFB19A1E40CFA1005E5BA1 /* TranslationResponse.swift in Sources */,
+				A6CFB1AB1E41B89C005E5BA1 /* AppConstants.swift in Sources */,
 				A6CFB1941E40BB43005E5BA1 /* APIError.swift in Sources */,
 				A6CFB1961E40C887005E5BA1 /* TranslateAPIClient.swift in Sources */,
 				A6F3B5711E408B0700C0125C /* ViewController.swift in Sources */,
 				A6CFB19E1E40DD47005E5BA1 /* LanguagesResponse.swift in Sources */,
 				A6F3B56F1E408B0700C0125C /* AppDelegate.swift in Sources */,
 				A6CFB19C1E40DCA7005E5BA1 /* TranslationLanguage.swift in Sources */,
+				A6CFB1C31E41F186005E5BA1 /* AlamoAPIClient.swift in Sources */,
 				A6F3B5851E408B8F00C0125C /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

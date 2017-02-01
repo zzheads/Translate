@@ -32,9 +32,12 @@ enum TranslateEndpoint: Endpoint {
         }
     }
     
+    var url: URL {
+        return URL(string: self.path, relativeTo: self.baseURL)!
+    }
+    
     var request: URLRequest {
-        let url = URL(string: self.path, relativeTo: self.baseURL)!
-        return URLRequest(url: url)
+        return URLRequest(url: self.url)
     }
 }
 
@@ -63,13 +66,13 @@ class TranslateAPIClient: NSObject, APIClient {
         if (debugLogging) {
             print(endpoint.request)
         }
-        self.fetch(request: endpoint.request, parse: T.parse, completion: completion)
+        self.fetch(request: endpoint.request, completion: completion)
     }
     
-    func fetchArray<T: JSONDecodable>(endpoint: Endpoint, completion: @escaping (APIResultArray<T>) -> Void) {
+    func fetchArray<T: JSONDecodable>(endpoint: Endpoint, completion: @escaping (APIArrayResult<T>) -> Void) {
         if (debugLogging) {
             print(endpoint.request)
         }
-        self.fetchArray(request: endpoint.request, parse: T.parseArray, completion: completion)
+        self.fetchArray(request: endpoint.request, completion: completion)
     }
 }

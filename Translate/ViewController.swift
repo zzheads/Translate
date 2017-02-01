@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     let apiClient = TranslateAPIClient()
+    let alamoClient = AlamoAPIClient()
     
     @IBOutlet weak var translateButton: UIButton!
     @IBOutlet weak var translatedLabel: UILabel!
@@ -32,13 +33,13 @@ class ViewController: UIViewController {
         pickerView.delegate = self
         translateButton.addTarget(self, action: #selector(translatePressed(_:)), for: .touchUpInside)
 
-        apiClient.fetchArray(endpoint: TranslateEndpoint.languages) { (result: APIResultArray<TranslationLanguage>) in
+        apiClient.fetchArray(endpoint: TranslateEndpoint.languages) { (result: APIArrayResult<TranslationLanguage>) in
             switch result {
             case .Success(let languages):
                 self.languages = languages
                 self.pickerView.reloadAllComponents()
             case .Failure(let error):
-                print(error)
+                print("\(error)")
             }
         }
     }
@@ -60,7 +61,7 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
         label.text = languages[row].name
-        label.font = UIFont.boldSystemFont(ofSize: 15.0)
+        label.font = AppFont.sanFranciscoDisplayRegular(size: 15.0).font
         label.textColor = .white
         label.textAlignment = .center
         return label
@@ -75,15 +76,22 @@ extension ViewController {
             else {
                 return
         }
-        
-        apiClient.fetch(endpoint: TranslateEndpoint.translate(text: text, from: nil, to: to.code)) { (result: APIResult<TranslationResponse>) in
-            switch result {
-            case .Success(let translation):
-                self.translatedLabel.text = translation.translationText
-            case .Failure(let error):
-                print(error)
+
+        alamoClient.fetch(endpoint: TranslateEndpoint.translate(text: text, from: nil, to: to.code)) { (translate: TranslationResponse?) in
+            guard let translate = translate else {
+                return
             }
+            self.translatedLabel.text = translate.translationText
         }
+        
+//        apiClient.fetch(endpoint: TranslateEndpoint.translate(text: text, from: nil, to: to.code)) { (result: APIResult<TranslationResponse>) in
+//            switch result {
+//            case .Success(let translation):
+//                self.translatedLabel.text = translation.translationText
+//            case .Failure(let error):
+//                print(error)
+//            }
+//        }
         
     }
 }

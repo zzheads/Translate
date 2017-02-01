@@ -8,6 +8,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SanFranciscoDisplay-Medium.otf">
+            <string>SanFranciscoDisplay-Medium</string>
+        </array>
+        <array key="SanFranciscoDisplay-Regular.otf">
+            <string>SanFranciscoDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -23,52 +31,73 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xRV-wW-egQ">
                                 <rect key="frame" x="16" y="28" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.1424564123" green="0.43202492590000002" blue="0.52230489250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="VDI-Kn-LHS"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHr-wQ-j3q">
-                                <rect key="frame" x="16" y="224" width="343" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="QVy-k5-ywo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdY-u7-1YI">
-                                <rect key="frame" x="16" y="617" width="343" height="30"/>
-                                <color key="backgroundColor" red="0.80886739490000004" green="0.77278232570000005" blue="0.88971918819999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="YdE-YX-h6e"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
-                                <state key="normal" title="Translate!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHT-ZU-eP3">
                                 <rect key="frame" x="16" y="66" width="343" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="FUx-Hw-ez5"/>
                                 </constraints>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdY-u7-1YI">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.3449392617" green="0.58444213869999995" blue="0.55958855149999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YdE-YX-h6e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="15"/>
+                                <state key="normal" title="Translate!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QQB-Vs-Jgt">
+                                <rect key="frame" x="16" y="224" width="343" height="385"/>
+                                <color key="backgroundColor" red="0.1424564123" green="0.43202492590000002" blue="0.52230489250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHr-wQ-j3q">
+                                <rect key="frame" x="28" y="234" width="319" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="eBe-Vh-x66"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.61658728119999995" green="0.54182654620000004" blue="0.78159064050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.13599109649999999" green="0.36775609850000002" blue="0.47612679000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RHT-ZU-eP3" firstAttribute="top" secondItem="xRV-wW-egQ" secondAttribute="bottom" constant="8" id="0XF-Lr-83u"/>
+                            <constraint firstAttribute="trailing" secondItem="QQB-Vs-Jgt" secondAttribute="trailing" constant="16" id="3bG-cA-4x0"/>
                             <constraint firstAttribute="trailing" secondItem="RHT-ZU-eP3" secondAttribute="trailing" constant="16" id="55O-UX-RRS"/>
                             <constraint firstItem="xRV-wW-egQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="5eY-UI-whG"/>
                             <constraint firstItem="XdY-u7-1YI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="8Tp-L8-SbX"/>
                             <constraint firstItem="RHT-ZU-eP3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="ABC-xn-VCQ"/>
                             <constraint firstAttribute="trailing" secondItem="XdY-u7-1YI" secondAttribute="trailing" constant="16" id="ESL-dA-GD9"/>
-                            <constraint firstItem="VHr-wQ-j3q" firstAttribute="top" secondItem="RHT-ZU-eP3" secondAttribute="bottom" constant="8" id="MZr-wu-9Lp"/>
-                            <constraint firstItem="VHr-wQ-j3q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="MyL-hh-Ta3"/>
+                            <constraint firstItem="QQB-Vs-Jgt" firstAttribute="top" secondItem="RHT-ZU-eP3" secondAttribute="bottom" constant="8" id="L1k-DH-6UW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XdY-u7-1YI" secondAttribute="bottom" constant="20" id="RpY-7Y-xXE"/>
-                            <constraint firstAttribute="trailing" secondItem="VHr-wQ-j3q" secondAttribute="trailing" constant="16" id="hKv-PK-U0Z"/>
+                            <constraint firstItem="QQB-Vs-Jgt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Xuq-jz-v04"/>
+                            <constraint firstItem="XdY-u7-1YI" firstAttribute="top" secondItem="QQB-Vs-Jgt" secondAttribute="bottom" constant="8" id="Z5P-3B-9s7"/>
+                            <constraint firstItem="VHr-wQ-j3q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="28" id="icO-cm-6Es"/>
+                            <constraint firstAttribute="trailing" secondItem="VHr-wQ-j3q" secondAttribute="trailing" constant="28" id="n7V-GF-crj"/>
+                            <constraint firstItem="VHr-wQ-j3q" firstAttribute="top" secondItem="RHT-ZU-eP3" secondAttribute="bottom" constant="18" id="nrs-rL-IxV"/>
                             <constraint firstItem="xRV-wW-egQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="x40-Vd-753"/>
                             <constraint firstAttribute="trailing" secondItem="xRV-wW-egQ" secondAttribute="trailing" constant="16" id="xmM-7D-yaK"/>
                         </constraints>

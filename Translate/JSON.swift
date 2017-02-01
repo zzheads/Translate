@@ -10,8 +10,11 @@ import Foundation
 
 typealias JSON = [String: AnyObject]
 typealias JSONArray = [JSON]
+
 typealias JSONTaskCompletion = (JSON?, HTTPURLResponse?, Error?) -> Void
 typealias JSONArrayTaskCompletion = (JSONArray?, HTTPURLResponse?, Error?) -> Void
+typealias TaskCompletion<J> = (J?, HTTPURLResponse?, Error?) -> Void
+
 typealias JSONTask = URLSessionDataTask
 typealias URLSessionDataTaskCompletion = (Data?, URLResponse?, Error?) -> Void
 
@@ -19,19 +22,12 @@ protocol JSONDecodable: class {
     init?(with json: JSON)
 }
 
-typealias Parse<T> = ((JSON) -> T?) where T: JSONDecodable
-typealias ParseArray<T> = ((JSONArray) -> [T]?) where T: JSONDecodable
+typealias Parse<J, T: JSONDecodable> = ((J) -> T?) where T: JSONDecodable
 
 extension JSONDecodable {
-    static var parse: Parse<Self> {
+    static var parse: Parse<JSON, Self> {
         return { (json: JSON) in
             return Self.init(with: json)
-        }
-    }
-
-    static var parseArray: ParseArray<Self> {
-        return { (jsonArray: JSONArray) in
-            return [Self].init(with: jsonArray)
         }
     }
 }
@@ -45,6 +41,12 @@ extension Array where Element: JSONDecodable {
             } else {
                 return nil
             }
+        }
+    }
+    
+    static var parse: Parse<JSONArray, Array> {
+        return { (jsonArray: JSONArray) in
+            return Array.init(with: jsonArray)
         }
     }
 }
