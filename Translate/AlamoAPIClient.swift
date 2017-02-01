@@ -11,7 +11,7 @@ import Alamofire
 
 class AlamoAPIClient {
     
-    func fetch<T: JSONDecodable>(endpoint: Endpoint, completion: @escaping (T?) -> Void) {
+    func fetch<T: JSONDecodable>(endpoint: Endpoint, completion: @escaping ([T]?) -> Void) {
         Alamofire.request(endpoint.url, method: .get, parameters: nil)
             .validate()
             .responseJSON { (response) -> Void in
@@ -26,12 +26,18 @@ class AlamoAPIClient {
                     let json = response.result.value as? JSON,
                     let value = T(with: json)
                     else {
-                        print("Error while fetching: \(response.result.error)")
-                        completion(nil)
+                        guard
+                        let jsonArray = response.result.value as? JSONArray,
+                            let values = [T](with: jsonArray)
+                            else {
+                                print("Error while fetching: \(response.result.error)")
+                                completion(nil)
+                                return
+                        }
+                        completion(values)
                         return
                 }
-                
-                completion(value)
+                completion([value])
         }
     }
 }

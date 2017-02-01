@@ -33,15 +33,23 @@ class ViewController: UIViewController {
         pickerView.delegate = self
         translateButton.addTarget(self, action: #selector(translatePressed(_:)), for: .touchUpInside)
 
-        apiClient.fetchArray(endpoint: TranslateEndpoint.languages) { (result: APIArrayResult<TranslationLanguage>) in
-            switch result {
-            case .Success(let languages):
-                self.languages = languages
-                self.pickerView.reloadAllComponents()
-            case .Failure(let error):
-                print("\(error)")
+        alamoClient.fetch(endpoint: TranslateEndpoint.languages) { (languages: [TranslationLanguage]?) in
+            guard let languages = languages else {
+                return
             }
+            self.languages = languages
+            self.pickerView.reloadAllComponents()
         }
+        
+//        apiClient.fetchArray(endpoint: TranslateEndpoint.languages) { (result: APIArrayResult<TranslationLanguage>) in
+//            switch result {
+//            case .Success(let languages):
+//                self.languages = languages
+//                self.pickerView.reloadAllComponents()
+//            case .Failure(let error):
+//                print("\(error)")
+//            }
+//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,8 +85,11 @@ extension ViewController {
                 return
         }
 
-        alamoClient.fetch(endpoint: TranslateEndpoint.translate(text: text, from: nil, to: to.code)) { (translate: TranslationResponse?) in
-            guard let translate = translate else {
+        alamoClient.fetch(endpoint: TranslateEndpoint.translate(text: text, from: nil, to: to.code)) { (translates: [TranslationResponse]?) in
+            guard
+                let translates = translates,
+                let translate = translates.first
+                else {
                 return
             }
             self.translatedLabel.text = translate.translationText
