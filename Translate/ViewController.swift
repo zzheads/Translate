@@ -40,16 +40,8 @@ class ViewController: UIViewController {
             self.languages = languages
             self.pickerView.reloadAllComponents()
         }
-        
-//        apiClient.fetchArray(endpoint: TranslateEndpoint.languages) { (result: APIArrayResult<TranslationLanguage>) in
-//            switch result {
-//            case .Success(let languages):
-//                self.languages = languages
-//                self.pickerView.reloadAllComponents()
-//            case .Failure(let error):
-//                print("\(error)")
-//            }
-//        }
+     
+        textField.addTarget(self, action: #selector(translatePressed(_:)), for: .editingDidEndOnExit)
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,7 +69,7 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 }
 
 extension ViewController {
-    @objc fileprivate func translatePressed(_ sender: UIButton) {
+    @objc fileprivate func translatePressed(_ sender: Any) {
         guard
             let text = textField.text,
             let to = selectedLanguage
@@ -94,15 +86,6 @@ extension ViewController {
             }
             self.translatedLabel.text = translate.translationText
         }
-        
-//        apiClient.fetch(endpoint: TranslateEndpoint.translate(text: text, from: nil, to: to.code)) { (result: APIResult<TranslationResponse>) in
-//            switch result {
-//            case .Success(let translation):
-//                self.translatedLabel.text = translation.translationText
-//            case .Failure(let error):
-//                print(error)
-//            }
-//        }
         
     }
 }
